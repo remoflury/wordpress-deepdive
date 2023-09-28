@@ -6,25 +6,31 @@
   html {
     @apply scroll-smooth
   }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply inline-block w-full
+  }
 
   h1 {
     @apply text-5xl;
-    @apply mb-4
+    @apply mb-4 mt-8 first:mt-0
   }
 
   h2 {
     @apply text-4xl;
-    @apply mb-3;
+    @apply mb-3 mt-6 first:mt-0;
   }
 
   h3 {
     @apply text-3xl;
-    @apply mb-2;
+    @apply mb-2 mt-4 first:mt-0;
   }
 
   h4 {
     @apply text-4xl;
-    @apply mb-2;
+    @apply mb-2 mt-4 first:mt-0;
   }
 
   p,
