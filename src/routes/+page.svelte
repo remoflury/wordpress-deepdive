@@ -5,11 +5,14 @@
 </script>
 
 <section class="container">
-	<p>{@html data.page.content.rendered}</p>
+	<h1>{data.page.title.rendered}</h1>
+	<article class="redactor">{@html data.page.content.rendered}</article>
 
 	<h2>Blogbeiträge</h2>
 	{#each data.posts as post, index (index)}
 		<h3>{post.title.rendered}</h3>
-		<p>{@html post.content.rendered}</p>
+		<article class="redactor">
+			{@html post.content.rendered}
+		</article>
 	{/each}
 </section>

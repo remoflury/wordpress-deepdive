@@ -1,3 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth
+  }
+
+  h1 {
+    @apply text-5xl;
+    @apply mb-4
+  }
+
+  h2 {
+    @apply text-4xl;
+    @apply mb-3;
+  }
+
+  h3 {
+    @apply text-3xl;
+    @apply mb-2;
+  }
+
+  h4 {
+    @apply text-4xl;
+    @apply mb-2;
+  }
+
+  p,
+  .redactor p,
+  .redactor a,
+  .redactor ul,
+  .redactor ol,
+  .redactor li {
+    @apply text-base
+  }
+
+  .redactor a {
+    @apply underline hover:opacity-75 transition
+  }
+
+  /* Layout Stuff */
+
+  main > section {
+    @apply py-12
+  }
+}
