@@ -8,7 +8,25 @@ export default {
         padding: {
           DEFAULT: '1rem'
         }
-      }
+      },
+      minHeight: {
+        screen: ['100vh /* fallback for Opera, IE and etc. */', '100dvh']
+      },
+      height: {
+        screen: ['100vh /* fallback for Opera, IE and etc. */', '100dvh']
+      },
+      maxHeight: {
+        screen: ['100vh /* fallback for Opera, IE and etc. */', '100dvh']
+      },
+    },
+    colors: {
+      black: "#04080f",
+      blue: {
+        dark: "#507dbc",
+        semi: "#a1c6ea",
+        light: "#bbd1ea",
+      },
+      offwhite: "#dae3e5"
     }
   },
   plugins: []

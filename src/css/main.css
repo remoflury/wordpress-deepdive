@@ -4,7 +4,7 @@
 
 @layer base {
   html {
-    @apply scroll-smooth
+    @apply scroll-smooth min-h-screen text-black bg-offwhite
   }
   h1,
   h2,
@@ -50,5 +50,19 @@
 
   main > section {
     @apply py-12
+  }
+
+  /* nav li {
+    @apply text-red-500
+  } */
+
+
+  /* Counter */
+  .wpsm_counterbox span {
+    @apply !text-2xl
+  }
+
+  .wpsm_counterbox .wpsm_count-title h3 {
+    @apply !text-4xl
   }
 }
