@@ -1,7 +1,10 @@
 <script lang="ts">
+	import { PUBLIC_CMS_URL } from '$env/static/public';
+
 	export let data;
 
-	console.log(data.page);
+	// console.log(data.posts);
+	// console.log(data.blocks);
 </script>
 
 <section class="container">

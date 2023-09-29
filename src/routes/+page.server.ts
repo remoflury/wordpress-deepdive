@@ -3,16 +3,21 @@ import type { PageServerLoad } from "./$types";
 import { PUBLIC_CMS_API_URL } from "$env/static/public";
 
 export const load: PageServerLoad= async ({fetch}) => {
-  const pageResponse = await fetch(`${PUBLIC_CMS_API_URL}/pages/2`, {
-    method: 'GET'
-  })
-  const page: PageResultProps = await pageResponse.json()
 
-  const postResponse = await fetch(`${PUBLIC_CMS_API_URL}/posts`)
-  const posts = await postResponse.json()
+  const getPageRes = async () => {
+    const pageResponse = await fetch(`${PUBLIC_CMS_API_URL}/pages/2`)
+    const page: PageResultProps = await pageResponse.json()
+    return page
+  }
+
+  const getPostRes = async () => {
+    const postResponse = await fetch(`${PUBLIC_CMS_API_URL}/posts`)
+    const posts = await postResponse.json()
+    return posts
+  }
 
   return {
-    page,
-    posts
+    page: await getPageRes(),
+    posts: await getPostRes(),
   }
 };
