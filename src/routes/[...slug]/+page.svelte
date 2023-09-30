@@ -1,13 +1,8 @@
 <script lang="ts">
-	import PageStart from '$lib/components/pageStart.svelte';
+	import PageContent from '$lib/components/pageContent.svelte';
 
 	export let data;
-
-	const content = data.page.acf;
-
-	// console.log(content);
+	const content = data.page;
 </script>
 
-<section class="container">
-	<PageStart titleH1={content.titleH1} lead={content.leadText} image={content.headerImage} />
-</section>
+<PageContent {content} />
