@@ -1,13 +1,11 @@
 <script lang="ts">
-	import { PUBLIC_CMS_URL } from '$env/static/public';
 	import PageStart from '$lib/components/pageStart.svelte';
-	import type { ACFPageResultProps } from '$lib/types/pageTypes.js';
 
 	export let data;
 
-	const content: ACFPageResultProps = data.page.acf;
+	const content = data.page.acf;
 
-	console.log(content);
+	// console.log(content);
 </script>
 
 <section class="container">

@@ -29,12 +29,12 @@
 
 	onMount(async () => {
 		const visitorCount = await getVisitorCount();
-		animateValue(counterElem, 0, count, count * 50);
+		animateValue(counterElem, 0, count, count * 40);
 	});
 </script>
 
 {#await getVisitorCount()}
-	<p>loading...</p>
+	<p>Anzeige ladet...</p>
 {:then data}
 	<WaveWrapper>
 		<article class="bg-blue-dark py-8 grid place-content-center">

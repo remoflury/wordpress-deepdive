@@ -25,9 +25,8 @@
 
   h3 {
     @apply text-3xl;
-    @apply mb-2 mt-4 first:mt-0;
+    @apply mb-3 mt-4 md:mt-6 2xl:mt-8 first:mt-0;
   }
-
   h4 {
     @apply text-4xl;
     @apply mb-2 mt-4 first:mt-0;
@@ -39,7 +38,7 @@
   .redactor ul,
   .redactor ol,
   .redactor li {
-    @apply text-base
+    @apply text-base lg:text-lg
   }
 
   .redactor a {
@@ -50,6 +49,15 @@
 
   main > section {
     @apply py-12
+  }
+
+  .content-grid {
+    @apply grid grid-cols-4 gap-x-4;
+    @apply lg:grid-cols-12
+  }
+
+  .content-grid > * {
+    @apply col-span-full
   }
 
   /* nav li {

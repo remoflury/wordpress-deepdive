@@ -1,6 +1,7 @@
-import type { PageResultProps } from "$lib/types/pageTypes";
+import type { ACFPageResultProps } from "$lib/types/pageTypes";
 import type { PageServerLoad } from "../$types";
 import { PUBLIC_CMS_API_URL } from "$env/static/public";
+import { error } from "@sveltejs/kit";
 
 export const load: PageServerLoad = async ({fetch, url}) => {
   const slugs = url.pathname.split('/')
@@ -9,8 +10,11 @@ export const load: PageServerLoad = async ({fetch, url}) => {
   const pageResponse = await fetch(`${PUBLIC_CMS_API_URL}/pages?slug=${slug}&acf_format=standard`, {
     method: 'GET'
   })
-  const page: PageResultProps[] = await pageResponse.json()
+  const page: ACFPageResultProps[] = await pageResponse.json()
 
+  if (!page.length) {
+    throw error(404, {message: 'Ups, diese Seite konnte nicht gefunden werden.'})
+  }
   return {
     page: page[0]
   }

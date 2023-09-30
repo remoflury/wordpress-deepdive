@@ -1,19 +1,15 @@
 <script lang="ts">
-	import type { ACFPageResultProps } from '$lib/types/pageTypes.js';
 	import PageStart from '$lib/components/pageStart.svelte';
-	import WaveWrapper from '$lib/components/ui/waves/waveWrapper.svelte';
 	import VisitorCounter from '$lib/components/visitorCounter.svelte';
+	import Baths from '$lib/components/baths.svelte';
 
 	export let data;
-	const content: ACFPageResultProps = data.page.acf;
+	const content = data.page.acf;
 
-	console.log(content);
-
-	// console.log(data.posts);
-	// console.log(data.blocks);
+	// console.log(data);
 </script>
 
-<section class="min-h-screen">
+<section class="min-h-screen lg:min-h-[unset]">
 	<PageStart titleH1={content.titleH1} lead={content.leadText} image={content.headerImage} />
 	{#if content.visitorCount.showVisitorCount}
 		<VisitorCounter title={content.visitorCount.titleCounterH2} />
@@ -21,7 +17,5 @@
 </section>
 
 <section class="">
-	<article class="container">
-		<h2 class="">{content.content.titleH2}</h2>
-	</article>
+	<Baths content={content.baths} />
 </section>

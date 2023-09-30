@@ -1,77 +1,21 @@
-// import { WP_REST_API_Page } from "wp-types"
+import type { WP_REST_API_Page } from "wp-types"
 
-export type PageResultProps = {
-  _links: {
-    about: {href: string}[],
-    author: {
-      embeddable: boolean,
-      href: string
-    }[],
-    collection: {
-      href: string
-    }[],
-    curies: {
-      href: string,
-      name: string,
-      templated: boolean
-    }[],
-    replies: {
-      embeddable: boolean,
-      href: string
-    }[],
-    self: {
-      href: string
-    }[],
-  },
-  acf: ACFPageResultProps,
-  author: number,
-
-  comment_status: string,
-  content: {
-    protected: false,
-    rendered: string,
-  },
-  date: string,
-  date_gmt: string,
-  excerpt: {
-    protected: false,
-    rendered: string
-  },
-  featured_media: number,
-  guid: {rendered: string},
-  id: number,
-  link: string,
-  menu_order: 0,
-  meta: {
-    footnotes: string
-  },
-  modified: string,
-  modified_gmt: string,
-  parent: number,
-  ping_status: string,
-  slug: string,
-  status: string,
-  template: string,
-  title: {
-    rendered: string
-  },
-  type: string
+export interface ACFPageResultProps extends WP_REST_API_Page {
+  acf: {
+    titleH1: string,
+    leadText?: string,
+    headerImage: ACFImageProps,
+    content: {
+      titleH2: string,
+      text: string
+    },
+    visitorCount: CounterProps,
+    baths: BathsProps
+  }
 }
-
-export type ACFPageResultProps = {
-  titleH1: string,
-  leadText?: string,
-  headerImage: ACFImageProps,
-  content: {
-    titleH2: string,
-    text: string
-  },
-  visitorCount: CounterProps
-}
-
 export type CounterProps = {
   showVisitorCount: boolean,
-  count: string,
+  // count: string,
   titleCounterH2: string
 }
 
@@ -108,4 +52,16 @@ export type ACFImageSizeProps = {
   height: number;
 }
 
+export type BathsProps = {
+  titleH2: string,
+  text?: string,
+  bath1: BathProps,
+  bath2: BathProps,
+  bath3: BathProps,
+}
 
+export type BathProps = {
+  nameBath: string,
+  caption?: string,
+  imageBath: ACFImageProps
+}
