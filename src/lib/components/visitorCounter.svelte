@@ -37,10 +37,13 @@
 	<p>Anzeige ladet...</p>
 {:then data}
 	<WaveWrapper>
-		<article class="bg-blue-dark py-8 grid place-content-center">
+		<article class="bg-blue-dark grid place-content-center">
 			<div class="container">
-				<p class="font-bold text-2xl text-blue-light text-center mb-4">{title}</p>
-				<p bind:this={counterElem} class="text-6xl text-offwhite font-bold text-center" />
+				<p class="font-bold text-2xl lg:text-3xl text-blue-light text-center mb-4">{title}</p>
+				<p
+					bind:this={counterElem}
+					class="text-6xl lg:text-8xl text-offwhite font-bold text-center"
+				/>
 			</div>
 		</article>
 	</WaveWrapper>

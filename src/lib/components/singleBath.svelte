@@ -2,8 +2,6 @@
 	import type { BathProps } from '$lib/types/pageTypes';
 
 	export let content: BathProps;
-
-	console.log(content);
 </script>
 
 <article

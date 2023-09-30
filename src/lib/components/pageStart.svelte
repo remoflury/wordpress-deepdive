@@ -6,7 +6,7 @@
 	export let lead: string = '';
 </script>
 
-<article class="container">
+<article class="container content-grid">
 	<div class="relative">
 		<figure class="aspect-video md:aspect-[2.2/1] lg:aspect-[3/1] overflow-hidden group bleed-out">
 			<img
@@ -17,10 +17,10 @@
 		</figure>
 	</div>
 
-	<h1>{titleH1}</h1>
+	<h1 class="lg:col-span-6">{titleH1}</h1>
 
 	{#if lead}
-		<p class="lead">{lead}</p>
+		<p class="lead lg:col-span-6 lg:col-start-1">{lead}</p>
 	{/if}
 </article>
 

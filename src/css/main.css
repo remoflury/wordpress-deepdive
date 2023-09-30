@@ -15,7 +15,7 @@
 
   h1 {
     @apply text-5xl;
-    @apply mb-4 mt-8 first:mt-0
+    @apply mb-4 mt-8 md:mb-6 lg:mb-10 2xl:mb-16 md:mt-10 lg:mt-14 2xl:mt-20 first:mt-0
   }
 
   h2 {
