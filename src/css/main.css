@@ -20,7 +20,7 @@
 
   h2 {
     @apply text-4xl;
-    @apply mb-3 mt-6 first:mt-0;
+    @apply mb-4 mt-6 first:mt-0;
   }
 
   h3 {

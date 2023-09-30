@@ -16,6 +16,7 @@
 				class="object-cover object-center w-full h-full group-hover:scale-105 transition duration-700"
 				src={content.imageBath.url}
 				alt={content.imageBath.alt}
+				loading="lazy"
 			/>
 		</div>
 		{#if content.caption}

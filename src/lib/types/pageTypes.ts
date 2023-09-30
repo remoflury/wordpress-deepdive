@@ -10,8 +10,19 @@ export interface ACFPageResultProps extends WP_REST_API_Page {
       text: string
     },
     visitorCount: CounterProps,
-    baths: BathsProps
+    baths: BathsProps,
+    slideshow: SlideshowProps
   }
+}
+
+export type SlideshowProps = {
+  titleH2: string,
+  image1: ACFImageProps,
+  image2: ACFImageProps,
+  image3: ACFImageProps,
+  image4: ACFImageProps,
+  image5: ACFImageProps,
+  image6: ACFImageProps,
 }
 export type CounterProps = {
   showVisitorCount: boolean,
