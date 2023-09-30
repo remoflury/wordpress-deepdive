@@ -10,14 +10,7 @@ export const load: PageServerLoad= async ({fetch}) => {
     return page
   }
 
-  const getPostRes = async () => {
-    const postResponse = await fetch(`${PUBLIC_CMS_API_URL}/posts`)
-    const posts = await postResponse.json()
-    return posts
-  }
-
   return {
     page: await getPageRes(),
-    posts: await getPostRes(),
   }
 };

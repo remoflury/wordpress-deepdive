@@ -11,7 +11,8 @@ export interface ACFPageResultProps extends WP_REST_API_Page {
     },
     visitorCount: CounterProps,
     baths: BathsProps,
-    slideshow: SlideshowProps
+    slideshow: SlideshowProps,
+    showCourses: boolean
   }
 }
 

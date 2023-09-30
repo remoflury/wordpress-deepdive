@@ -2,6 +2,7 @@
 	import type { ACFPageResultProps } from '$lib/types/pageTypes';
 	import Baths from './baths.svelte';
 	import PageStart from './pageStart.svelte';
+	import ShowCourses from './showCourses.svelte';
 	import Slider from './slider.svelte';
 	import WaveWrapper from './ui/waves/waveWrapper.svelte';
 	import VisitorCounter from './visitorCounter.svelte';
@@ -29,3 +30,9 @@
 		<Slider content={content.acf.slideshow} />
 	</WaveWrapper>
 </section>
+
+{#if content.acf.showCourses}
+	<section>
+		<ShowCourses />
+	</section>
+{/if}

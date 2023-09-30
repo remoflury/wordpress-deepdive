@@ -15,7 +15,5 @@ export const load: PageServerLoad = async ({fetch, url}) => {
   if (!page.length) {
     throw error(404, {message: 'Ups, diese Seite konnte nicht gefunden werden.'})
   }
-  return {
-    page: page[0]
-  }
+
 };
