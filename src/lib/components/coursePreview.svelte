@@ -1,14 +1,14 @@
 <script lang="ts">
-	import type { CourseProps } from '$lib/types/postTypes';
+	import type { CourseDetailsProps } from '$lib/types/postTypes';
 	import { formatDate } from '$lib/utils/generalUtils';
 
-	export let content: CourseProps;
+	export let content: CourseDetailsProps;
 	export let courseId: number;
 </script>
 
 <a
 	href="/kurse/{courseId}"
-	class="flex gap-x-4 justify-between group items-end py-4 first:pt-0 border-b border-blue-dark"
+	class="flex gap-x-4 justify-between group items-end py-4 xl:py-6 first:pt-0 border-b border-blue-dark xl:col-span-7"
 >
 	<div class="">
 		<h3 class="text-bold">{content.courseName}</h3>

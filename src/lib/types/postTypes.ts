@@ -5,6 +5,11 @@ export interface ACFCourseResultProps extends WP_REST_API_Post {
 }
 
 export type CourseProps = {
+  id: number,
+  course: CourseDetailsProps
+}
+
+export type CourseDetailsProps = {
   courseName: string,
   excerpt: string,
   description: string,

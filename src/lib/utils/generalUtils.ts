@@ -1,3 +1,4 @@
+
 export const formatDate = (input: string): string => {
   const date = new Date(input);
   if (isNaN(date.getTime())) {

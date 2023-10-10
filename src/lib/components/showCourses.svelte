@@ -1,21 +1,25 @@
 <script lang="ts">
 	import { PUBLIC_CMS_API_URL } from '$env/static/public';
-	import type { ACFCourseResultProps } from '$lib/types/postTypes';
+	import type { ACFCourseResultProps, CourseProps } from '$lib/types/postTypes';
 	import CoursePreview from './coursePreview.svelte';
 
 	const fetchCourses = async () => {
 		const response = await fetch(`${PUBLIC_CMS_API_URL}/course`);
 		const data: ACFCourseResultProps[] = await response.json();
-		return data;
+		//@ts-ignore
+		const courses: CourseProps[] = data.map((course) => {
+			return { course: course.acf, id: course.id };
+		});
+		return courses;
 	};
 </script>
 
-<div class="container">
+<div class="container content-grid">
 	{#await fetchCourses()}
 		<p>Kurse werden geladen...</p>
 	{:then data}
-		{#each data as result, index (result.id)}
-			<CoursePreview content={result.acf} courseId={result.id} />
+		{#each data as item, index (index)}
+			<CoursePreview content={item.course} courseId={item.id} />
 		{/each}
 	{:catch error}
 		<p>Error: {error}</p>

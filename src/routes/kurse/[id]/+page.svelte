@@ -1,11 +1,13 @@
 <script lang="ts">
+	import type { CourseDetailsProps } from '$lib/types/postTypes.js';
 	export let data;
 	import { formatDate } from '$lib/utils/generalUtils.js';
 
-	const course = data.course.acf;
+	//@ts-ignore
+	const course: CourseDetailsProps = data.course.acf;
 </script>
 
-<section class="container">
+<section class="container content-grid">
 	<a href="/" title="zurück" class="group flex gap-x-3 items-center mb-6">
 		<svg
 			class="rotate-180 -translate-x-1 group-hover:-translate-x-4 transition"
@@ -17,7 +19,7 @@
 		</svg>
 		<p>zurück</p>
 	</a>
-	<article class="redactor">
+	<article class="redactor xl:col-span-9">
 		<h1>{course.courseName}</h1>
 		<p class="italic mb-8">{formatDate(course.date)}</p>
 		<p>{course.description}</p>
