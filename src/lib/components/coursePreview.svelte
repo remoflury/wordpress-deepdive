@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { CourseProps } from '$lib/types/postTypes';
+	import { formatDate } from '$lib/utils/generalUtils';
 
 	export let content: CourseProps;
 	export let courseId: number;
@@ -7,11 +8,12 @@
 
 <a
 	href="/kurse/{courseId}"
-	class="flex gap-x-4 justify-between group items-end pb-4 border-b border-blue-dark"
+	class="flex gap-x-4 justify-between group items-end py-4 first:pt-0 border-b border-blue-dark"
 >
 	<div class="">
 		<h3 class="text-bold">{content.courseName}</h3>
 		<p>{content.excerpt}</p>
+		<p class="italic">{formatDate(content.date)}</p>
 	</div>
 	<div class="w-8 group-hover:translate-x-4 transition">
 		<svg class="max-w-full w-full" height="24" viewBox="0 -960 960 960" width="24"
