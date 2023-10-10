@@ -18,6 +18,11 @@ export default {
       maxHeight: {
         screen: ['100vh /* fallback for Opera, IE and etc. */', '100dvh']
       },
+      maxWidth: {
+        '1/4': '25%',
+        '1/3': '33%',
+        '3/4': '75%'
+      },
       aspectRatio: {
         '3/4': '3/4',
         '4/3': '4/3'
