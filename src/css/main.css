@@ -1,3 +1,4 @@
+@import './fonts.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,7 +11,7 @@
   h2,
   h3,
   h4 {
-    @apply inline-block w-full
+    @apply inline-block w-full font-heading font-bold
   }
 
   h1 {

@@ -33,11 +33,11 @@
 	});
 </script>
 
-{#await getVisitorCount()}
-	<p>Anzeige ladet...</p>
-{:then data}
-	<WaveWrapper>
-		<article class="bg-blue-dark grid place-content-center">
+<WaveWrapper>
+	<article class="bg-blue-dark grid place-content-center">
+		{#await getVisitorCount()}
+			<p class="text-blue-light">Anzeige ladet...</p>
+		{:then data}
 			<div class="container">
 				<p class="font-bold text-2xl lg:text-3xl text-blue-light text-center mb-4">{title}</p>
 				<p
@@ -45,6 +45,6 @@
 					class="text-6xl lg:text-8xl text-offwhite font-bold text-center"
 				/>
 			</div>
-		</article>
-	</WaveWrapper>
-{/await}
+		{/await}
+	</article>
+</WaveWrapper>

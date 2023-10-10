@@ -9,6 +9,9 @@ export default {
           DEFAULT: '1rem'
         }
       },
+      fontFamily: {
+        heading: ['Nordique', 'display']
+      },
       minHeight: {
         screen: ['100vh /* fallback for Opera, IE and etc. */', '100dvh']
       },
