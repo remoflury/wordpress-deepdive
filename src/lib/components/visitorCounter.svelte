@@ -10,7 +10,6 @@
 	const getVisitorCount = async () => {
 		const response = await fetch(`${PUBLIC_CMS_URL}/wp-json/snp/v1/number/`);
 		const data = await response.json();
-		count = data;
 		return data;
 	};
 
@@ -28,14 +27,14 @@
 	}
 
 	onMount(async () => {
-		const visitorCount = await getVisitorCount();
+		count = await getVisitorCount();
 		animateValue(counterElem, 0, count, count * 40);
 	});
 </script>
 
 <WaveWrapper>
 	<article class="bg-blue-dark grid place-content-center">
-		{#await getVisitorCount()}
+		{#await count}
 			<p class="text-blue-light">Anzeige ladet...</p>
 		{:then data}
 			<div class="container">
