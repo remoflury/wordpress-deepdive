@@ -14,7 +14,7 @@
 	};
 </script>
 
-<div class="container content-grid">
+<div class="container content-grid overflow-y-hidden">
 	{#await fetchCourses()}
 		<p>Kurse werden geladen...</p>
 	{:then data}
