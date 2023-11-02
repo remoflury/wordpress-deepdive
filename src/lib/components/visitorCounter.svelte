@@ -2,10 +2,11 @@
 	import { PUBLIC_CMS_URL } from '$env/static/public';
 	import { onMount } from 'svelte';
 	import WaveWrapper from './ui/waves/waveWrapper.svelte';
+	import viewport from '$lib/utils/viewportObserver';
 
 	export let title: string;
 	let counterElem: HTMLParagraphElement;
-	let count: number;
+	let count: number = 0;
 
 	const getVisitorCount = async () => {
 		const response = await fetch(`${PUBLIC_CMS_URL}/wp-json/snp/v1/number/`);
@@ -27,9 +28,13 @@
 	}
 
 	onMount(async () => {
-		count = await getVisitorCount();
-		animateValue(counterElem, 0, count, count * 40);
+		// count = await getVisitorCount();
+		// animateValue(counterElem, 0, count, count * 40);
 	});
+
+	$: if (count) {
+		animateValue(counterElem, 0, count, count * 40);
+	}
 </script>
 
 <WaveWrapper>
@@ -41,6 +46,11 @@
 				<p class="font-bold text-2xl lg:text-3xl text-blue-light text-center mb-4">{title}</p>
 				<p
 					bind:this={counterElem}
+					use:viewport
+					on:enterViewport={async () => {
+						count = await getVisitorCount();
+					}}
+					on:exitViewport={() => (count = 0)}
 					class="text-6xl lg:text-8xl text-offwhite font-bold text-center"
 				/>
 			</div>
