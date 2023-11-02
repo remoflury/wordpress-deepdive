@@ -9,6 +9,7 @@
 <a
 	href="/kurse/{courseId}"
 	class="flex gap-x-4 justify-between group items-end py-4 xl:py-6 first:pt-0 border-b border-blue-dark xl:col-span-7"
+	data-aos="fade-up"
 >
 	<div class="">
 		<h3 class="text-bold">{content.courseName}</h3>

@@ -24,14 +24,15 @@
 		pauseOnHover: true,
 		interval: 4000,
 		arrows: true,
-		pagination: false
+		pagination: false,
+		type: 'loop'
 	};
 </script>
 
 <article class="bg-blue-dark pb-8">
 	<div class="container content-grid">
-		<h2 class="text-offwhite lg:col-span-6 lg:mb-12">{content.titleH2}</h2>
-		<div class="lg:col-span-8 lg:col-start-3">
+		<h2 class="text-offwhite lg:col-span-6 lg:mb-12" data-aos="fade-up">{content.titleH2}</h2>
+		<div class="lg:col-span-8 lg:col-start-3" data-aos="fade-up">
 			<Splide {options} hasTrack={false}>
 				<div class="relative">
 					<div class="splide__arrows absolute flex gap-8 -bottom-4 translate-y-full right-0">

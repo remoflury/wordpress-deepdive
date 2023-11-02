@@ -17,10 +17,10 @@
 		</figure>
 	</div>
 
-	<h1 class="lg:col-span-6">{titleH1}</h1>
+	<h1 class="lg:col-span-6" data-aos="fade-up">{titleH1}</h1>
 
 	{#if lead}
-		<p class="lead lg:col-span-6 lg:col-start-1">{lead}</p>
+		<p class="lead lg:col-span-6 lg:col-start-1" data-aos="fade-up">{lead}</p>
 	{/if}
 </article>
 

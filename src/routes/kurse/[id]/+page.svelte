@@ -8,7 +8,7 @@
 </script>
 
 <section class="container content-grid">
-	<a href="/" title="zurück" class="group flex gap-x-3 items-center mb-6">
+	<a href="/" title="zurück" class="group flex gap-x-3 items-center mb-6" data-aos="fade-up">
 		<svg
 			class="rotate-180 -translate-x-1 group-hover:-translate-x-4 transition"
 			height="24"
@@ -20,11 +20,16 @@
 		<p>zurück</p>
 	</a>
 	<article class="redactor xl:col-span-9">
-		<h1>{course.courseName}</h1>
-		<p class="italic mb-8">{formatDate(course.date)}</p>
-		<p>{course.description}</p>
-		<a class="mt-8 inline-block" href={course.signUp.url} target={course.signUp.target}
-			>{course.signUp.title}</a
+		<h1 data-aos="fade-up">{course.courseName}</h1>
+		<p class="italic mb-8" data-aos="fade-up">{formatDate(course.date)}</p>
+		<p data-aos="fade-up">{course.description}</p>
+		<a
+			class="mt-8 inline-block"
+			href={course.signUp.url}
+			target={course.signUp.target}
+			data-aos="fade-up"
 		>
+			{course.signUp.title}
+		</a>
 	</article>
 </section>

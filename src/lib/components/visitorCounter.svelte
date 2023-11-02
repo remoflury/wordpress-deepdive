@@ -42,7 +42,7 @@
 		{#await count}
 			<p class="text-blue-light">Anzeige ladet...</p>
 		{:then data}
-			<div class="container">
+			<div class="container" data-aos="fade-up">
 				<p class="font-bold text-2xl lg:text-3xl text-blue-light text-center mb-4">{title}</p>
 				<p
 					bind:this={counterElem}
