@@ -8,7 +8,7 @@
 <article
 	class="group bg-gradient-to-b from-blue-dark from-75% to-75% to-transparent p-4 lg:p-6 lg:from-70% lg:to-70%"
 	data-aos="fade-up"
-	data-aos-delay={index * 100 + 50}
+	data-aos-delay={index * 200 + 150}
 >
 	<h3 class="text-offwhite mb-6">
 		{content.nameBath}
