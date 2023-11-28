@@ -5,12 +5,14 @@ import type { LayoutServerLoad } from "./$types";
 export const load: LayoutServerLoad = async ({ fetch}) => {
 
   const getFooter = async () => {
-    const response = await fetch(`${PUBLIC_CMS_API_URL}/footer`)
+    const response = await fetch(`${PUBLIC_CMS_API_URL}/footer-details/v1/data/`)
     const data = await response.json()
+    console.log(data)
     const formattedData: FooterProps = {
-      title: data.opening_hours_title || '',
-      hours1: data.monday_to_friday || '',
-      hours2: data.saturday_to_sunday || ''
+      title: data.uberschrift || '',
+      mondayToFriday: data.montag_bis_freitag || '',
+      saturday: data.samstag || '',
+      sunday: data.sonntag || ''
     }
     return formattedData
   }

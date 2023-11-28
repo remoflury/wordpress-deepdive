@@ -3,6 +3,8 @@
 	import type { FooterProps } from '$lib/types/globalTypes';
 
 	const footer: FooterProps = $page.data.footer;
+
+	console.log(footer);
 </script>
 
 <svg class="translate-y-1 relative -z-10" viewBox="0 0 1440 320">
@@ -16,11 +18,15 @@
 		<h4 class="text-offwhite mb-4">{footer.title}</h4>
 		<div class="flex gap-x-12 justify-between max-w-sm">
 			<p class="text-offwhite">Montag - Freitag:</p>
-			<p class="text-offwhite">{footer.hours1}</p>
+			<p class="text-offwhite">{footer.mondayToFriday}</p>
 		</div>
 		<div class="flex gap-x-12 justify-between max-w-sm mt-1">
-			<p class="text-offwhite">Samstag - Sonntag:</p>
-			<p class="text-offwhite">{footer.hours1}</p>
+			<p class="text-offwhite">Samstag:</p>
+			<p class="text-offwhite">{footer.saturday}</p>
+		</div>
+		<div class="flex gap-x-12 justify-between max-w-sm mt-1">
+			<p class="text-offwhite">Sonntag:</p>
+			<p class="text-offwhite">{footer.sunday}</p>
 		</div>
 	</article>
 </footer>
