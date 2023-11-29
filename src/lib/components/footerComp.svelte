@@ -3,8 +3,6 @@
 	import type { FooterProps } from '$lib/types/globalTypes';
 
 	const footer: FooterProps = $page.data.footer;
-
-	console.log(footer);
 </script>
 
 <svg class="translate-y-1 relative -z-10" viewBox="0 0 1440 320">
