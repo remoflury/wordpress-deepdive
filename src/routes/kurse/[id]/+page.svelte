@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { CourseDetailsProps } from '$lib/types/postTypes.js';
-	export let data;
 	import { formatDate } from '$lib/utils/generalUtils.js';
+	export let data;
 
 	//@ts-ignore
 	const course: CourseDetailsProps = data.course.acf;
