@@ -12,8 +12,14 @@ export const load: PageServerLoad = async ({fetch, url}) => {
   })
   const page: ACFPageResultProps[] = await pageResponse.json()
 
+  console.log(page)
+
   if (!page.length) {
     throw error(404, {message: 'Ups, diese Seite konnte nicht gefunden werden.'})
+  }
+
+  return {
+    page: page[0],
   }
 
 };
