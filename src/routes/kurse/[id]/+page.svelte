@@ -24,7 +24,7 @@
 		<p class="italic mb-8" data-aos="fade-up">{formatDate(course.date)}</p>
 		<p data-aos="fade-up">{course.description}</p>
 		<a
-			class="mt-8 inline-block"
+			class="bg-blue-dark px-4 py-2 inline-block max-w-max text-offwhite mt-6 !no-underline"
 			href={course.signUp.url}
 			target={course.signUp.target}
 			data-aos="fade-up"
