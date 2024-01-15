@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { PUBLIC_CMS_URL } from '$env/static/public';
-	import { onMount } from 'svelte';
 	import WaveWrapper from './ui/waves/waveWrapper.svelte';
 	import viewport from '$lib/utils/viewportObserver';
 	import { tweened } from 'svelte/motion';
